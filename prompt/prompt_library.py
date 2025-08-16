@@ -1,6 +1,6 @@
 # Prepare prompt template
 from langchain_core.prompts import ChatPromptTemplate
-from model.models import PrompTypes
+from model.models import PromptTypes
 
 document_analysis_prompt = ChatPromptTemplate.from_template("""
 You are a highly capable assistant trained to analyze and summarize documents.
@@ -42,6 +42,6 @@ contextualize_qa_prompt = ChatPromptTemplate.from_template("""
 PROMPT_REGISTRY = {
     "document_analysis": document_analysis_prompt,
     "document_comparison": document_comparison_prompt,
-    PrompTypes.CONTEXTUALIZE_QUESTION: contextualize_prompt,
-    PrompTypes.CONTEXTUALIZE_QA: contextualize_qa_prompt,
+    PromptTypes.CONTEXTUALIZE_QUESTION: contextualize_prompt,
+    PromptTypes.CONTEXTUALIZE_QA: contextualize_qa_prompt,
 }

@@ -20,6 +20,6 @@ class ChangeFormat(BaseModel):
 class SummaryResponse(RootModel[list[ChangeFormat]]):
     pass
 
-class PrompTypes(str, Enum):
+class PromptTypes(str, Enum):
     CONTEXTUALIZE_QUESTION = "contextualize_question"
     CONTEXTUALIZE_QA = "contextualize_qa"

@@ -11,7 +11,7 @@ from utils.model_loader import ModelLoader
 from exception.custom_exception import DocumentPortalException
 from logger.custom_logger import CustomLogger
 from prompt.prompt_library import PROMPT_REGISTRY
-from model.models import PrompTypes
+from model.models import PromptTypes
 
 
 class ConversationalRAG:
@@ -20,8 +20,8 @@ class ConversationalRAG:
             self.log =  CustomLogger().get_logger(__name__)
             self.session_id = session_id
             self.llm =  self._load_llm()
-            self.contextualize_prompt: ChatPromptTemplate = PROMPT_REGISTRY[PrompTypes.CONTEXTUALIZE_QUESTION.value]
-            self.qa_prompt: ChatPromptTemplate = PROMPT_REGISTRY[PrompTypes.CONTEXT_QA.value]
+            self.contextualize_prompt: ChatPromptTemplate = PROMPT_REGISTRY[PromptTypes.CONTEXTUALIZE_QUESTION.value]
+            self.qa_prompt: ChatPromptTemplate = PROMPT_REGISTRY[PromptTypes.CONTEXT_QA.value]
             if retriever is None:
                 raise ValueError("Retriever cannot be None")
             self.retriever = retriever

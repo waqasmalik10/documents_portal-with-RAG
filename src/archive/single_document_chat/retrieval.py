@@ -8,7 +8,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from logger.custom_logger import CustomLogger
 from exception.custom_exception import DocumentPortalException
 from prompt.prompt_library import PROMPT_REGISTRY
-from model.models import PrompTypes
+from model.models import PromptTypes
 
 
 class ConversationalRAG:
@@ -18,8 +18,8 @@ class ConversationalRAG:
             self.session_id = session_id
             self.retriever = retriever
             self.llm = self._load_llm()
-            self.contextualize_prompt = PROMPT_REGISTRY[PrompTypes.CONTEXTUALIZE_QUESTION.value]
-            self.qa_prompt = PROMPT_REGISTRY[PrompTypes.CONTEXTUALIZE_QA.value]
+            self.contextualize_prompt = PROMPT_REGISTRY[PromptTypes.CONTEXTUALIZE_QUESTION.value]
+            self.qa_prompt = PROMPT_REGISTRY[PromptTypes.CONTEXTUALIZE_QA.value]
             self.history_aware_retriever = create_history_aware_retriever(
                 self.llm, self.retriever, self.contextualize_prompt
             )

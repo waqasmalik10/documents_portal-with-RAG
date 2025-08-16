@@ -4,7 +4,6 @@ ipykernel==6.30.0
 langchain_groq==0.3.6
 langchain_google_genai==2.1.8
 langchain-community==0.3.27
-faiss-cpu==1.7.4
 structlog==25.4.0
 PyMuPDF==1.26.3
 pylint==3.3.7
@@ -16,6 +15,7 @@ python-multipart==0.0.20
 pytest==8.4.1
 docx2txt==0.9
 fastapi
-
+fitz
+faiss-cpu==1.7.4
 
 -e .
